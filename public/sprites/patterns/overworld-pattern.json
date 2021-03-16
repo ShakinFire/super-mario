@@ -194,5 +194,29 @@
                 ]
             }
         ]
+    },
+    "flag-pole": {
+        "tiles": [
+            {
+                "name": "pole-top",
+                "ranges": [
+                    [0, -1]
+                ]
+            },
+            {
+                "name": "pole",
+                "type": "flag",
+                "ranges": [
+                    [0, 1, 0, 8]
+                ]
+            },
+            {
+                "name": "chocolate",
+                "type": "ground",
+                "ranges": [
+                    [0, 8]
+                ]
+            }
+        ]
     }
 }

@@ -14,7 +14,6 @@ import Level from './level.js';
 import { createTextLayer } from './layers/text.js';
 
 const main = async (canvas) => {
-    
     const videoContext = canvas.getContext('2d');
     const audioContext = new AudioContext();
 
@@ -87,7 +86,7 @@ const main = async (canvas) => {
 
     timer.start();
 
-    runLevel('1-1');
+    runLevel('debug-progression');
 };
 
 const canvas = document.getElementById('screen');

@@ -8,10 +8,7 @@ export default class EventEmitter {
     }
 
     emit(name, ...args) {
-        this.listeners.forEach((listener) => {
-            if (listener.name === name) {
-                listener.callback(...args);
-            }
-        });
+        const listener = this.listeners.find((listener) => listener.name === name);
+        listener.callback(...args);
     }
 }

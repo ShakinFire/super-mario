@@ -1,0 +1,10 @@
+{
+    "imageURL": "/img/items-objects.png",
+
+    "frames": [
+        {
+            "name": "flag",
+            "rect": [128, 16, 16, 16]
+        }
+    ]
+}

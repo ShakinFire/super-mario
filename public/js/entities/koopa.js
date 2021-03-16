@@ -108,7 +108,7 @@ const createKoopaFactory = (sprite) => {
     const routeAnim = (koopa) => {
         if (koopa.traits.get(Behavior).state === STATE_HIDING) {
             if (koopa.traits.get(Behavior).hideTime > 3) {
-                return wakeAnim(koopa.behavior.hideTime);
+                return wakeAnim(koopa.traits.get(Behavior).hideTime);
             }
             return 'hiding';
         }

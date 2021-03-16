@@ -31,7 +31,7 @@ const createCannonFactory = (audio) => {
 
         bullet.vel.set(80 * dir, 0);
 
-        // cannon.sounds.add('shoot');
+        cannon.sounds.add('shoot');
         level.entities.add(bullet);
     }
 

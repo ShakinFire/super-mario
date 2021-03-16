@@ -30,10 +30,28 @@
                     ]
                 }
             ]
+        },
+        {
+            "tiles": [
+                {
+                    "pattern": "flag-pole",
+                    "type": "flag",
+                    "ranges": [
+                        [
+                            8,
+                            4
+                        ]
+                    ]
+                }
+            ]
         }
     ],
 
     "entities": [
+        {
+            "name": "flag",
+            "pos": [119, 65]
+        }
     ],
 
     "triggers": [
