@@ -14,6 +14,7 @@ import Level from './level.js';
 import { createTextLayer } from './layers/text.js';
 
 const main = async (canvas) => {
+    
     const videoContext = canvas.getContext('2d');
     const audioContext = new AudioContext();
 
