@@ -7,6 +7,7 @@ import Go from '../traits/go.js';
 import Solid from '../traits/solid.js';
 import Physics from '../traits/physics.js';
 import { loadAudioBoard } from '../loaders/audio.js';
+import PoleTraveller from '../traits/pole-traveller.js';
 
 const SLOW_DRAG = 1/1000;
 const FAST_DRAG = 1/5000;
@@ -60,6 +61,7 @@ const createMarioFactory = (sprite, audio) => {
         mario.addTrait(new Jump());
         mario.addTrait(new Killable());
         mario.addTrait(new Stomper());
+        mario.addTrait(new PoleTraveller())
 
         mario.traits.get(Killable).removeAfter = 0;
         mario.turbo = setTurboState;

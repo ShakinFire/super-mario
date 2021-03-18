@@ -35,11 +35,10 @@
             "tiles": [
                 {
                     "pattern": "flag-pole",
-                    "type": "flag",
                     "ranges": [
                         [
                             8,
-                            4
+                            3
                         ]
                     ]
                 }
@@ -49,8 +48,13 @@
 
     "entities": [
         {
+            "name": "flag-pole",
+            "pos": [128, 48]
+        },
+        {
             "name": "flag",
-            "pos": [119, 65]
+            "id": "flag",
+            "pos": [119, 48]
         }
     ],
 

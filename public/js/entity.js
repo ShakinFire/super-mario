@@ -12,6 +12,7 @@ export const Sides = {
 
 export default class Entity {
     constructor() {
+        this.id = null;
         this.canCollide = true;
         this.audio = null;
 
@@ -32,9 +33,9 @@ export default class Entity {
         this.traits.set(trait.constructor, trait);
     }
 
-    collides(candidate) {
+    collides(candidate, level) {
         this.traits.forEach((trait) => {
-            trait.collides(this, candidate);
+            trait.collides(this, candidate, level);
         });
     }
 

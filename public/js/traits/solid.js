@@ -2,10 +2,10 @@ import Trait from '../trait.js';
 import { Sides } from '../entity.js';
 
 export default class Solid extends Trait {
-    constructor() {
+    constructor(obstructs = true) {
         super();
 
-        this.obstructs = true;
+        this.obstructs = obstructs;
     }
 
     obstruct(entity, side, match) {

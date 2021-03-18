@@ -12,6 +12,14 @@ export default class BoundingBox {
             this.right > box.left;
     }
 
+    get meridian() {
+        return this.pos.x + this.offset.x + this.size.x / 2;
+    }
+
+    set meridian(c) {
+        this.pos.x = c - (this.size.x / 2 + this.offset.x);
+    }
+
     get bottom() {
         return this.pos.y + this.size.y + this.offset.y;
     }

@@ -205,16 +205,15 @@
             },
             {
                 "name": "pole",
-                "type": "flag",
                 "ranges": [
-                    [0, 1, 0, 8]
+                    [0, 1, 0, 9]
                 ]
             },
             {
                 "name": "chocolate",
                 "type": "ground",
                 "ranges": [
-                    [0, 8]
+                    [0, 9]
                 ]
             }
         ]

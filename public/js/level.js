@@ -11,6 +11,16 @@ const focusPlayer = (level) => {
     }
 };
 
+class EntityCollection extends Set {
+    get(id) {
+        for (const entity of this) {
+            if (entity.id === id) {
+                return entity;
+            }
+        }
+    }
+}
+
 export default class Level extends Scene {
     static EVENT_TRIGGER = Symbol('trigger');
     constructor() {
@@ -22,7 +32,7 @@ export default class Level extends Scene {
 
         this.camera = new Camera();
         this.music = new MusicController();
-        this.entities = new Set();
+        this.entities = new EntityCollection();
 
         this.entityCollider = new EntityCollider(this.entities);
         this.tileCollider = new TileCollider();
@@ -38,7 +48,7 @@ export default class Level extends Scene {
         });
 
         this.entities.forEach((entity) => {
-            this.entityCollider.check(entity);
+            this.entityCollider.check(entity, this);
         });
 
         this.entities.forEach((entity) => {

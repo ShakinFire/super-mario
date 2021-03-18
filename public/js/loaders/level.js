@@ -46,10 +46,11 @@ const setupBackgrounds = (levelSpec, level, backgroundSprites, patterns) => {
 const setupEntities = (levelSpec, level, entityFactory) => {
     const spriteLayer = createSpriteLayer(level.entities);
 
-    levelSpec.entities.forEach(({ name, pos: [x, y] }) => {
+    levelSpec.entities.forEach(({ id, name, pos: [x, y] }) => {
         const createEntity = entityFactory[name];
         const entity = createEntity();
         entity.pos.set(x, y);
+        entity.id = id;
         level.entities.add(entity);
     });
 
