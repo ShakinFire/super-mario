@@ -86,7 +86,7 @@ const main = async (canvas) => {
 
     timer.start();
 
-    runLevel('debug-progression');
+    runLevel('1-1');
 };
 
 const canvas = document.getElementById('screen');

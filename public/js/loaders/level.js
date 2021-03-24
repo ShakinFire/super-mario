@@ -8,6 +8,7 @@ import { loadJson } from '../loaders.js';
 import Entity from '../entity.js';
 import LevelTimer from '../traits/level-timer.js';
 import Trigger from '../traits/trigger.js';
+import Spawner from '../traits/spawner.js';
 
 const createTimer = () => {
     const timer = new Entity();
@@ -45,15 +46,25 @@ const setupBackgrounds = (levelSpec, level, backgroundSprites, patterns) => {
 
 const setupEntities = (levelSpec, level, entityFactory) => {
     const spriteLayer = createSpriteLayer(level.entities);
+    const spawner = new Spawner();
 
     levelSpec.entities.forEach(({ id, name, pos: [x, y] }) => {
         const createEntity = entityFactory[name];
         const entity = createEntity();
         entity.pos.set(x, y);
-        entity.id = id;
-        level.entities.add(entity);
+
+        if (id) {
+            entity.id = id;
+            level.entities.add(entity);
+        } else {
+            spawner.addEntity(entity);
+        }
     });
 
+    const entityProxy = new Entity();
+    entityProxy.addTrait(spawner);
+
+    level.entities.add(entityProxy);
     level.comp.layers.push(spriteLayer);
 };
 
