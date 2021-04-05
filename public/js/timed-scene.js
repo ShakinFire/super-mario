@@ -3,7 +3,7 @@ import Scene from './scene.js';
 export default class TimedScene extends Scene {
     constructor() {
         super();
-        this.countDown = 0;
+        this.countDown = 4;
     }
 
     update(gameContext) {
